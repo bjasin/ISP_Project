@@ -1,4 +1,5 @@
 var login;
+var user_name;
 var user_image;
 var user_x;
 var user_y;
@@ -8,12 +9,17 @@ var user_pswd;
 $("#create").mousedown(function(){
 	$('#title').text("Create an Account");
 	$("#page1").css("display", "none");
-	$("#page2").css("display", "block");
+	$("#page_user").css("display", "block");
 	login = false;
+     });
+$("#user_submit").mousedown(function(){
+	user_name = $('#username').val();
+	$("#page_user").css("display", "none");
+	$("#page2").css("display", "block");
      });
 
 $("#login").mousedown(function(){
-	$('#title').text("Login");
+	$('#title').text("Log In");
 	$("#page1").css("display", "none");
 	$("#page2").css("display", "block");
 	login = true;

@@ -1,8 +1,21 @@
 h1 {
 	text-align: center;
 }
-
-#page1 > button {
+#login_area{
+	border: 2px solid black;
+	margin-right: 25%;
+	margin-left: 25%;
+	margin-top: 10%;
+	padding-bottom: 25px;
+}
+#create_area{
+	border: 2px solid black;
+	margin-top: 100px;
+	margin-right: 25%;
+	margin-left: 25%;
+	padding-bottom: 25px;
+}
+#login {
 	background-color: #4CAF50;
     border: none;
     color: white;
@@ -11,12 +24,26 @@ h1 {
     text-decoration: none;
     display: block;
     font-size: 16px;
-    margin-top: 200px;
+    margin-top: 10px;
     margin-bottom: auto;
     margin-right: auto;
     margin-left: auto;
 }
-#page2, #page3, #page4 {
+#create{
+	background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: block;
+    font-size: 16px;
+    margin-top: 100px;
+    margin-bottom: auto;
+    margin-right: auto;
+    margin-left: auto;
+}
+#page2, #page3, #page4, #page_user {
 	display:none;
 }
 
@@ -77,7 +104,7 @@ canvas {
     margin-left: auto;
 
 }
-#textbox, #text_submit {
+#textbox, #text_submit, #user_submit, #username {
 	background-color: #4CAF50;
     border: 2px solid black;
     color: white;

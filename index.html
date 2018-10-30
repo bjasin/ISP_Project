@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <!-- TODO:   
-
+restrictions on username and passwords
 
 -->
 <head>
@@ -14,17 +14,27 @@
 
 </head>
 <body>
-<h1 id="title">Login or Create an Account</h1>
 
+<h1 id="title">Home</h1>
 <!-- Choose Login or Create Account -->
 <div id="page1">
-	<button id="login">Login</button>
-	<button id="create">Create Account</button>
-</div>
+	<div id = "login_area"> 
+	<h1> Log In </h1>
+	<input id="username" type="text" placeholder="Enter Username"><br>
+	<button id="login">Enter Password</button>
+	</div>
 
+	<div id ="create_area">
+	<h1> Create an Account </h1>
+	<button id="create">Create Account</button>
+	</div>
+</div>
+<div id="page_user">
+	<input id="username" type="text" placeholder="Enter Username"><br>
+ 	<input id="user_submit" type="submit" value="Submit">
+</div>
 <!--Choose picture to use-->
 <div id="page2">
-    
     <input type="file" id="upload" name="avatar" accept="image/png, image/jpeg" />
     <button id="preview_pic">Preview</button>
     <button id="submit_pic">Submit</button>
@@ -43,7 +53,7 @@
 <!--Enter text password--> 
 <div id="page4">
 	<form>
-  	<input id="textbox" type="password"><br>
+  	<input id="textbox" type="password" placeholder="Enter Password"><br>
  	<input id="text_submit" type="submit" value="Submit">
 	</form>
 </div>
