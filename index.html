@@ -10,6 +10,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" type="text/css" href="project.css" />
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	 <script src="https://cdnjs.cloudflare.com/ajax/libs/fabric.js/2.4.3/fabric.min.js"></script>
 
 </head>
 <body>
@@ -33,11 +34,18 @@
 <!--Choose pixel selection-->
 <div id="page3">
 	<!--canvas?-->
+	<div id="canvas_wrap">
+		<canvas id="click_canvas"></canvas>
+	</div>
+	<button id="submit_circle">Submit Location</button>
+	<button id="reset_circle">Reset Location</button>
 </div>
-
 <!--Enter text password--> 
 <div id="page4">
-	
+	<form>
+  	<input id="textbox" type="password"><br>
+ 	<input id="text_submit" type="submit" value="Submit">
+	</form>
 </div>
 
 <!--Only if user is logging in. Either welcomes or rejects user-->
