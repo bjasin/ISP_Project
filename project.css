@@ -104,7 +104,7 @@ canvas {
     margin-left: auto;
 
 }
-#textbox, #text_submit, #user_submit, #username {
+#textbox, #text_submit, #user_submit, #username, .backbutton {
 	background-color: #4CAF50;
     border: 2px solid black;
     color: white;
@@ -117,4 +117,21 @@ canvas {
     margin-bottom: auto;
     margin-right: auto;
     margin-left: auto;
+}
+
+
+#page {
+	background-color: #4CAF50;
+    border: 2px solid black;
+    color: white;
+    padding: 5px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: block;
+    font-size: 16px;
+    margin-top: 20px;
+    margin-bottom: auto;
+    margin-right: auto;
+    margin-left: auto;
+
 }

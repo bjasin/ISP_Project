@@ -10,6 +10,7 @@ $("#create").mousedown(function(){
 	$('#title').text("Create an Account");
 	$("#page1").css("display", "none");
 	$("#page_user").css("display", "block");
+    $(".backbutton").css("display", "block");
 	login = false;
      });
 $("#user_submit").mousedown(function(){
@@ -64,6 +65,16 @@ $("#submit_circle").mousedown(function(){
 }
      });
 
+$(".backbutton").mousedown(function(){
+	$('#title').text("Home");
+	$("#page1").css("display", "block");
+	$("#page2").css("display", "none");
+    $("#page3").css("display", "none");
+    $("#page_user").css("display", "none");
+    $("#backbutton").css("display", "none");
+	login = false;
+     });
+
 
 $("#reset_circle").mousedown(function(){
 	canvas.clear();
@@ -75,6 +86,8 @@ $("#text_submit").mousedown(function(){
 	$("#page3").css("display", "none");
 	$("#page4").css("display", "none");	
      });
+
+
 
 function canvasBackground (){
 	var imga = new Image();
@@ -131,3 +144,5 @@ canvas.on('mouse:up', function(o){
   circleDrawn = true;
   //alert (circle.left+ ' '+ circle.top + ' '+ circle.radius);
 });
+
+
