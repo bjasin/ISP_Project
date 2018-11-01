@@ -2,7 +2,6 @@
 <html lang="en">
 <!-- TODO:   
 restrictions on username and passwords
-
 -->
 <head>
 	<title>ISP Project</title>
@@ -30,13 +29,13 @@ restrictions on username and passwords
 	</div>
 </div>
 <div id="page_user">
-	<input id="username" type="text" placeholder="Enter Username"><br>
+	<input id="username" type="text" placeholder="Enter Username" required><br>
  	<input id="user_submit" type="submit" value="Submit">
     <button class="backbutton">Back</button>
 </div>
 <!--Choose picture to use-->
 <div id="page2">
-    <input type="file" id="upload" name="avatar" accept="image/png, image/jpeg" />
+    <input type="file" id="upload" name="avatar" accept="image/png, image/jpeg" required/>
     <button id="preview_pic">Preview</button>
     <button id="submit_pic">Submit</button>
     <button class="backbutton">Back</button>

@@ -15,8 +15,10 @@ $("#create").mousedown(function(){
      });
 $("#user_submit").mousedown(function(){
 	user_name = $('#username').val();
-	$("#page_user").css("display", "none");
-	$("#page2").css("display", "block");
+    if(validate()) {
+        $("#page_user").css("display", "none");
+        $("#page2").css("display", "block");
+    }
      });
 
 $("#login").mousedown(function(){
@@ -86,6 +88,25 @@ $("#text_submit").mousedown(function(){
 	$("#page3").css("display", "none");
 	$("#page4").css("display", "none");	
      });
+
+function validate(){
+    var username = document.querySelector('#username');
+    if (!validateName(username))
+    	return false;
+}
+
+function validateName(input){
+    if(input.value=="")
+    {
+        alert("Please Enter Your User Name");
+        return false;
+    }
+    if(!isNaN(input.value)) {
+        alert("Please Enter Only Characters");
+        return false;
+    }
+	return true;
+}
 
 
 
