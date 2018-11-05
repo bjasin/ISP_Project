@@ -10,15 +10,12 @@ $("#create").mousedown(function(){
 	$('#title').text("Create an Account");
 	$("#page1").css("display", "none");
 	$("#page_user").css("display", "block");
-    $(".backbutton").css("display", "block");
 	login = false;
      });
 $("#user_submit").mousedown(function(){
 	user_name = $('#username').val();
-    if(validate()) {
-        $("#page_user").css("display", "none");
-        $("#page2").css("display", "block");
-    }
+	$("#page_user").css("display", "none");
+	$("#page2").css("display", "block");
      });
 
 $("#login").mousedown(function(){
@@ -67,16 +64,6 @@ $("#submit_circle").mousedown(function(){
 }
      });
 
-$(".backbutton").mousedown(function(){
-	$('#title').text("Home");
-	$("#page1").css("display", "block");
-	$("#page2").css("display", "none");
-    $("#page3").css("display", "none");
-    $("#page_user").css("display", "none");
-    $("#backbutton").css("display", "none");
-	login = false;
-     });
-
 
 $("#reset_circle").mousedown(function(){
 	canvas.clear();
@@ -88,27 +75,6 @@ $("#text_submit").mousedown(function(){
 	$("#page3").css("display", "none");
 	$("#page4").css("display", "none");	
      });
-
-function validate(){
-    var username = document.querySelector('#username');
-    if (!validateName(username))
-    	return false;
-}
-
-function validateName(input){
-    if(input.value=="")
-    {
-        alert("Please Enter Your User Name");
-        return false;
-    }
-    if(!isNaN(input.value)) {
-        alert("Please Enter Only Characters");
-        return false;
-    }
-	return true;
-}
-
-
 
 function canvasBackground (){
 	var imga = new Image();
@@ -165,5 +131,3 @@ canvas.on('mouse:up', function(o){
   circleDrawn = true;
   //alert (circle.left+ ' '+ circle.top + ' '+ circle.radius);
 });
-
-

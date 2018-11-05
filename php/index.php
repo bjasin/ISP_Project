@@ -13,6 +13,38 @@ restrictions on username and passwords
 
 </head>
 <body>
+	<?php
+$servername = "localhost";
+$username = "user";
+$password = "password";
+$dbname = "website";
+
+// Create connection
+$conn = new mysqli($servername, $username, $password, $dbname);
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+} 
+
+$sql = "DROP TABLE IF EXISTS userInfo";
+$conn->query($sql);
+
+// sql to create table
+$sql = "CREATE TABLE userInfo (
+id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY, 
+username VARCHAR(30) NOT NULL,
+image LONGBLOB,
+caption VARCHAR(30) NOT NULL
+)";
+
+if ($conn->query($sql) === TRUE) {
+    echo "Table MyGuests created successfully";
+} else {
+    echo "Error creating table: " . $conn->error;
+}
+
+$conn->close();
+?>
 
 <h1 id="title">Home</h1>
 <!-- Choose Login or Create Account -->
@@ -64,7 +96,19 @@ restrictions on username and passwords
 	
 </div>
 
+<?php 
+		if(!empty($_POST[""]))
+		
+if (isset($_POST["username"]) && !empty($_POST["username"])) {
+	$username = $_POST["username"];
+	echo $username;
+}
+if (isset($_POST["upload"]) && !empty($_POST["upload"])) {
+	$image = $_POST["upload"];
+	echo $image;
+}
 
+?>
 
 
 <script src="buttons.js"></script>
