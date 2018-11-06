@@ -72,8 +72,10 @@ $("#reset_circle").mousedown(function(){
      });
 $("#text_submit").mousedown(function(){
 	user_pswd = $('#textbox').val();
-	$("#page3").css("display", "none");
-	$("#page4").css("display", "none");	
+	/*$("#page3").css("display", "none");
+	$("#page4").css("display", "none");	*/
+	//window.location.href = "submit/page_user.php";
+
      });
 
 function canvasBackground (){
@@ -115,6 +117,8 @@ if (!circleDrawn){
     originX: 'center', originY: 'center'
   });
 
+  document.getElementById("circleX").value = pointer.x;
+  document.getElementById("circleY").value = pointer.y;
   canvas.add(circle);
 }
 });
@@ -129,5 +133,7 @@ canvas.on('mouse:move', function(o){
 canvas.on('mouse:up', function(o){
   isDown = false;
   circleDrawn = true;
+  document.getElementById("radius").value = circle.radius;
   //alert (circle.left+ ' '+ circle.top + ' '+ circle.radius);
+  //alert(document.getElementById("radius").value);
 });

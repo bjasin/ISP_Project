@@ -1,6 +1,10 @@
 h1 {
 	text-align: center;
 }
+#radius, #circleX, #circleY{
+    display:none;
+}
+
 #login_area{
 	border: 2px solid black;
 	margin-right: 25%;
@@ -47,7 +51,7 @@ h1 {
 	display:none;
 }
 
-#page2 > input{
+#page2 > input, #page2 > input {
 	background-color: #4CAF50;
     border: none;
     color: white;
@@ -62,8 +66,23 @@ h1 {
     margin-right: auto;
     margin-left: auto;
 }
-#page2 > button {
+#page2 > button, #page2 > input {
 	background-color: #4CAF50;
+    border: 2px solid black;
+    color: white;
+    padding: 5px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: block;
+    font-size: 16px;
+    margin-top: 20px;
+    margin-bottom: auto;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+#page_user input {
+    background-color: #4CAF50;
     border: 2px solid black;
     color: white;
     padding: 5px 10px;
@@ -88,7 +107,7 @@ canvas {
     margin-right: auto;
     width: 50%;
 }
-#page3 > button {
+#page3 > button, #page3 > input{
 
 	background-color: #4CAF50;
     border: 2px solid black;
@@ -104,7 +123,10 @@ canvas {
     margin-left: auto;
 
 }
-#textbox, #text_submit, #user_submit, #username, .backbutton {
+#user {
+
+}
+#user, #textbox, #text_submit, #user_submit, #username, .backbutton {
 	background-color: #4CAF50;
     border: 2px solid black;
     color: white;
