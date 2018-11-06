@@ -64,7 +64,7 @@ $conn->close();
 </div>
 <div id="page_user">
 
-	<form id="username_form" method="post" action="page_user.php">
+	<form id="username_form" method="post">
 		<input id="user" name="user" type="text" placeholder="Enter Username" required><br>
 		<input id="user_submit" name="submit" type="submit" value="Submit">
 	</form>
