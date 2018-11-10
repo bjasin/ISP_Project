@@ -1,43 +1,13 @@
-var login;
-var user_name;
-var user_image;
-var user_x;
-var user_y;
-var user_r;
-var user_pswd;
-
-$("#create").mousedown(function() {
-  // $('#title').text("Create an Account");
-  $("#create").click(function() {
-    window.location = "create_account/page_user.php";
-  });
-  login = false;
-});
-$("#user_submit").mousedown(function() {
-  user_name = $("#username").val();
-  //$("#page_user").css("display", "none");
-  //$("#page2").css("display", "block");
-});
-
-$("#login").mousedown(function() {
-  $("#title").text("Log In");
-  /*$("#page1").css("display", "none");
-    $("#page2").css("display", "block");
-    */
-  login = true;
-});
-$("#preview_pic").mousedown(function() {
-  var file = $("#upload")[0].files[0];
+$(document).ready(function() {
+  var file = $("#uploaded_image")[0].files[0];
   var reader = new FileReader();
   reader.readAsDataURL(file);
   reader.onload = function(e) {
     var img = $("#uploaded_image");
     img.attr("src", this.result);
   };
-});
-
-$("#submit_pic").mousedown(function() {
   var attr = $("#uploaded_image").attr("src");
+
   if (typeof attr !== typeof undefined && attr !== false) {
     var c = document.getElementById("click_canvas");
     var ctx = c.getContext("2d");
@@ -48,12 +18,11 @@ $("#submit_pic").mousedown(function() {
     // ctx.drawImage(imge, 0, 0, $('#uploaded_image').width(), $('#uploaded_image').height());
     //$("#page2").css("display", "none");
     user_image = $("#user_image");
-    //alert(user_image);
-    canvasBackground();
+
     //	$("#page3").css("display", "block");
   }
+  canvasBackground();
 });
-
 $("#submit_circle").mousedown(function() {
   if (circleDrawn) {
     user_x = circle.left;

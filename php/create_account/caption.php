@@ -10,23 +10,23 @@ restrictions on username and passwords
     <link rel="stylesheet" type="text/css" href="../project.css"/>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fabric.js/2.4.3/fabric.min.js"></script>
-
+    <link rel="icon" href="../security_icon.ico">
 </head>
 <body>
-<div id="page2">
-    <h1>Upload an Image:</h1>
-    <form id="image_form" method="post" action="pixel_selection.php">
-        <input type="file" id="upload" name="image" accept="image/png, image/jpeg" required/>
-        <input id="preview_pic" type="button" value="Preview">
 
-        <input id="submit_pic" name="submit" type="submit" value="Submit">
-    </form>
+<?php
+$GLOBALS['circleX'] = $_POST['circleX'];
+$GLOBALS['circleY'] = $_POST['circleY'];
+$GLOBALS['radius'] = $_POST['radius'];
+?>
+<h1>Set a Password</h1>
+  <div id="page4">
+  	<form id="caption_form" action="create_account_successful.php" method="post">
+  		<input id="caption" type="password" name="caption" placeholder="Enter Password"><br>
+  		<input id="text_submit" type="submit" name="submit" value="Submit">
+  	</form>
+  </div>
 
-    <button class="backbutton">Back</button>
-
-    <img id="uploaded_image">
-    <script src="choose_image.js"></script>
-</div>
 
 </body>
 </html>

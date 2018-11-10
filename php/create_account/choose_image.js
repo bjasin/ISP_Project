@@ -1,31 +1,13 @@
-var login;
-var user_name;
-var user_image;
-var user_x;
-var user_y;
-var user_r;
-var user_pswd;
-
-$("#create").mousedown(function() {
-  // $('#title').text("Create an Account");
-  $("#create").click(function() {
-    window.location = "create_account/page_user.php";
-  });
-  login = false;
-});
-$("#user_submit").mousedown(function() {
-  user_name = $("#username").val();
-  //$("#page_user").css("display", "none");
-  //$("#page2").css("display", "block");
+$("#preview_pic").mousedown(function() {
+  var file = $("#upload")[0].files[0];
+  var reader = new FileReader();
+  reader.readAsDataURL(file);
+  reader.onload = function(e) {
+    var img = $("#uploaded_image");
+    img.attr("src", this.result);
+  };
 });
 
-$("#login").mousedown(function() {
-  $("#title").text("Log In");
-  /*$("#page1").css("display", "none");
-    $("#page2").css("display", "block");
-    */
-  login = true;
-});
 $("#preview_pic").mousedown(function() {
   var file = $("#upload")[0].files[0];
   var reader = new FileReader();
@@ -37,6 +19,7 @@ $("#preview_pic").mousedown(function() {
 });
 
 $("#submit_pic").mousedown(function() {
+  $("#page3").css("display", "block");
   var attr = $("#uploaded_image").attr("src");
   if (typeof attr !== typeof undefined && attr !== false) {
     var c = document.getElementById("click_canvas");
@@ -49,8 +32,8 @@ $("#submit_pic").mousedown(function() {
     //$("#page2").css("display", "none");
     user_image = $("#user_image");
     //alert(user_image);
+    $("#page2").css("display", "none");
     canvasBackground();
-    //	$("#page3").css("display", "block");
   }
 });
 
@@ -91,6 +74,8 @@ function canvasBackground() {
     //alert(canvas.width);
     canvas.setBackgroundImage(f_img);
     canvas.renderAll();
+    console.log(imga.src);
+    //  document.getElementById("imageInput").value = imga;
   };
 }
 
@@ -137,4 +122,21 @@ canvas.on("mouse:up", function(o) {
   document.getElementById("radius").value = circle.radius;
   //alert (circle.left+ ' '+ circle.top + ' '+ circle.radius);
   //alert(document.getElementById("radius").value);
+});
+
+$("#submit_pic").mousedown(function() {
+  var attr = $("#uploaded_image").attr("src");
+  if (typeof attr !== typeof undefined && attr !== false) {
+    var c = document.getElementById("click_canvas");
+    var ctx = c.getContext("2d");
+    var imge = document.getElementById("uploaded_image");
+    //alert(canvas.width);
+    //canvas.width = $('#uploaded_image').width();
+    //canvas.height = $('#uploaded_image').height();
+    // ctx.drawImage(imge, 0, 0, $('#uploaded_image').width(), $('#uploaded_image').height());
+    //$("#page2").css("display", "none");
+    user_image = $("#user_image");
+
+    //	$("#page3").css("display", "block");
+  }
 });
