@@ -13,30 +13,6 @@ restrictions on username and passwords
 	<link rel="icon" href="security_icon.ico">
 </head>
 <body>
-	<?php
-    $servername = "localhost";
-    $username = "user";
-    $password = "password";
-    $dbname = "website";
-
-// Create connection
-    $conn = new mysqli($servername, $username, $password, $dbname);
-// Check connection
-    if ($conn->connect_error) {
-        die("Connection failed: " . $conn->connect_error);
-    }
-
-    $sql = "DROP TABLE IF EXISTS userInfo";
-    $conn->query($sql);
-
-if ($conn->query($sql) === true) {
-    echo "Table MyGuests created successfully";
-} else {
-    echo "Error creating table: " . $conn->error;
-}
-
-$conn->close();
-?>
 
 <h1 id="title">Home</h1>
 <!-- Choose Login or Create Account -->

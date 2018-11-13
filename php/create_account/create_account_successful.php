@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <!-- TODO:
@@ -17,7 +20,8 @@ restrictions on username and passwords
     <h1>Thank you for creating an account!</h1>
     <p>You may log in <a href="../index.php">here</a>, if you'd like.</p>
     <?php
-    $GLOBALS['caption'] = $_POST['caption'];
+    $_SESSION['caption'] = $_POST['caption'];
+
 
     ?>
     <?php
@@ -33,29 +37,12 @@ restrictions on username and passwords
           die("Connection failed: " . $conn->connect_error);
       }
 
-      if (isset($_POST["user"]) && !empty($_POST["user"])) {
-      }
-      if (isset($_POST["upload"]) && !empty($_POST["upload"])) {
-          $image = $_POST["upload"];
-          echo $image;
-      }
-      if (isset($_POST["radius"]) && !empty($_POST["radius"])) {
-          $radius = $_POST["radius"];
-          echo $radius;
-      }
+ $stmt = $conn->prepare("INSERT INTO USERS (username, image_path, radius, circleX, circleY, caption) VALUES (?, ?, ?, ?, ?, ?)");
+      $stmt->bind_param("ssddds", $_SESSION['user'], $_SESSION['image_path'], $_SESSION['radius'],
+      $_SESSION['circleX'], $_SESSION['circleY'], $_SESSION['caption']);
+      $stmt->execute();
+      $stmt->close();
 
-      if (isset($_POST["circleX"]) && !empty($_POST["circleX"])) {
-          $circleX = $_POST["circleX"];
-          echo $circleX;
-      }
-      if (isset($_POST["circleY"]) && !empty($_POST["circleY"])) {
-          $circleY = $_POST["circleY"];
-          echo $circleY;
-      }
-      if (isset($_POST["caption"]) && !empty($_POST["caption"])) {
-          $caption = $_POST["caption"];
-          echo $caption;
-      }
 ?>
 
 </body>

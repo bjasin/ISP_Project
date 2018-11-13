@@ -87,10 +87,10 @@ body {
   font-family: sans-serif;
 }
 
-#page3 {
+#page3 {}
+#div3 img {
   display: none;
 }
-
 #canvas_wrap,
 #page2 > img,
 #page3 > canvas {
@@ -98,6 +98,10 @@ body {
   margin-left : auto;
   margin-right: auto;
   width       : 25%;
+}
+
+p {
+  text-align: center;
 }
 
 canvas {
@@ -132,7 +136,9 @@ canvas {
   margin          : 20px auto auto;
 }
 
-#user {}
+#hidden_inputs input {
+  display: none;
+}
 
 #preview_pic,
 #submit_pic,
@@ -165,7 +171,6 @@ canvas {
 }
 
 #page4 input {
-  text-align      : center;
   background-color: #4CAF50;
   border          : 2px solid black;
   color           : white;

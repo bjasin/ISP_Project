@@ -1,3 +1,5 @@
+//  <h1 id="choose_image_header">Upload an Image:</h1>
+$("#header_div").html("<h1>Upload an Image<h1>");
 $("#preview_pic").mousedown(function() {
   var file = $("#upload")[0].files[0];
   var reader = new FileReader();
@@ -20,6 +22,7 @@ $("#preview_pic").mousedown(function() {
 
 $("#submit_pic").mousedown(function() {
   $("#page3").css("display", "block");
+  $("#header_div").html("<h1>Create a Circle<h1>");
   var attr = $("#uploaded_image").attr("src");
   if (typeof attr !== typeof undefined && attr !== false) {
     var c = document.getElementById("click_canvas");
@@ -32,6 +35,7 @@ $("#submit_pic").mousedown(function() {
     //$("#page2").css("display", "none");
     user_image = $("#user_image");
     //alert(user_image);
+    $("#submit_circle").css("display", "block");
     $("#page2").css("display", "none");
     canvasBackground();
   }

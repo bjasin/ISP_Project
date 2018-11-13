@@ -1,3 +1,9 @@
+<?php
+session_start();
+
+
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <!-- TODO:
@@ -13,11 +19,10 @@ restrictions on username and passwords
     <link rel="icon" href="../security_icon.ico">
 </head>
 <body>
-
 <?php
-$GLOBALS['circleX'] = $_POST['circleX'];
-$GLOBALS['circleY'] = $_POST['circleY'];
-$GLOBALS['radius'] = $_POST['radius'];
+$_SESSION['circleX'] = $_POST['circleX'];
+$_SESSION['circleY'] = $_POST['circleY'];
+$_SESSION['radius'] = $_POST['radius'];
 ?>
 <h1>Set a Password</h1>
   <div id="page4">
@@ -26,7 +31,5 @@ $GLOBALS['radius'] = $_POST['radius'];
   		<input id="text_submit" type="submit" name="submit" value="Submit">
   	</form>
   </div>
-
-
 </body>
 </html>

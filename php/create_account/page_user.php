@@ -21,33 +21,5 @@ restrictions on username and passwords
     </form>
     <button class="backbutton">Back</button>
 </div
-<?php
-if (isset($_POST["user"]) && !empty($_POST["user"])) {
-    $username = $_POST["user"];
-    echo $username;
-}
-if (isset($_POST["upload"]) && !empty($_POST["upload"])) {
-    $image = $_POST["upload"];
-    echo $image;
-}
-if (isset($_POST["radius"]) && !empty($_POST["radius"])) {
-    $radius = $_POST["radius"];
-    echo $radius;
-}
-
-if (isset($_POST["circleX"]) && !empty($_POST["circleX"])) {
-    $circleX = $_POST["circleX"];
-    echo $circleX;
-}
-if (isset($_POST["circleY"]) && !empty($_POST["circleY"])) {
-    $circleY = $_POST["circleY"];
-    echo $circleY;
-}
-if (isset($_POST["caption"]) && !empty($_POST["caption"])) {
-    $caption = $_POST["caption"];
-    echo $caption;
-}
-?>
-
 </body>
 </html>

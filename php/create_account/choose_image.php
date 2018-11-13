@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <!-- TODO:
@@ -14,39 +17,24 @@ restrictions on username and passwords
 </head>
 <body>
   <?php
-  $GLOBALS['user'] = $_POST['user'];
+  $_SESSION['user'] = $_POST['user'];
   ?>
+    <div id="header_div">
 
-    <h1>Upload an Image:</h1>
+  </div>
     <!--Choose picture to use-->
     <div id="page2">
-        <form id="image_form"  method="post">
-            <input type="file" id="upload" name="image" accept="image/png, image/jpeg" required/>
-        </form>
-        <button id="preview_pic">Preview</button>
+        <form id="image_form"  method="post" action="pix_selection.php" enctype="multipart/form-data">
+            <input type="file" id="upload" name="upload" accept="image/png, image/jpeg" required/>
+
+        <input id="preview_pic" type="button" value="Preview">
         <input id="submit_pic" name="submit" type="submit" value="Submit">
+        </form>
         <button class="backbutton">Back</button>
         <img id="uploaded_image">
     </div>
 
-    <!--Choose pixel selection-->
-    <div id="page3">
-        <!--canvas?-->
-        <div id="canvas_wrap">
-            <canvas id="click_canvas"></canvas>
-        </div>
-        <form id="pixel_form"  method="post" action="caption.php">
-            <input id="radius" type="text" name="radius">
-            <input id="circleX" type="text" name="circleX">
-            <input id="circleY" type="text" name="circleY">
-
-        <input id="submit_circle"  name="submit_circle" type="submit" value="Submit Location">
-</form>
-        <button id="reset_circle">Reset Location</button>
-    <button class="backbutton">Back</button>
-    <img id="uploaded_image">
     <script src="choose_image.js"> </script>
-</div>
 
 </body>
 </html>
