@@ -27,14 +27,11 @@ $imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
             echo "Sorry, there was an error uploading your file.";
         }
     }
-    $_SESSION['image_path'] = $target_dir . basename($_FILES["upload"]["name"]);
+    $_SESSION['image_path'] = "uploads/" . basename($_FILES["upload"]["name"]);
 
     ?>
 <!DOCTYPE html>
 <html lang="en">
-<!-- TODO:
-restrictions on username and passwords
--->
 <head>
     <title>ISP Project</title>
     <meta charset="UTF-8">
@@ -53,15 +50,15 @@ restrictions on username and passwords
         </div>
         <form id="pixel_form"  method="post" action="caption.php">
           <div id="hidden_inputs">
-            <input id="radius" type="text" name="radius">
-            <input id="circleX" type="text" name="circleX">
-            <input id="circleY" type="text" name="circleY">
+            <input id="radius" type="text" name="radius" required>
+            <input id="circleX" type="text" name="circleX" required>
+            <input id="circleY" type="text" name="circleY" required>
 </div>
         <input id="display: none;"  name="submit_circle" type="submit" value="Submit Location">
 </form>
         <button id="reset_circle">Reset Location</button>
     <button class="backbutton">Back</button>
-    <img id="uploaded_image" src="<?php echo $_SESSION['image_path'] ?>" style="display: none;">
+    <img id="uploaded_image" src="<?php echo "../uploads/" . basename($_FILES["upload"]["name"]) ?>" style="display: none;">
     <script src="pix_selection.js"> </script>
 </div>
 

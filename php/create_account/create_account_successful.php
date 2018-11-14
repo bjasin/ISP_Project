@@ -3,9 +3,6 @@ session_start();
 ?>
 <!DOCTYPE html>
 <html lang="en">
-<!-- TODO:
-restrictions on username and passwords
--->
 <head>
     <title>ISP Project</title>
     <meta charset="UTF-8">
@@ -21,8 +18,6 @@ restrictions on username and passwords
     <p>You may log in <a href="../index.php">here</a>, if you'd like.</p>
     <?php
     $_SESSION['caption'] = $_POST['caption'];
-
-
     ?>
     <?php
       $servername = "localhost";
@@ -36,13 +31,20 @@ restrictions on username and passwords
       if ($conn->connect_error) {
           die("Connection failed: " . $conn->connect_error);
       }
-
+$hashed_password = password_hash($_SESSION['caption'], PASSWORD_DEFAULT);
  $stmt = $conn->prepare("INSERT INTO USERS (username, image_path, radius, circleX, circleY, caption) VALUES (?, ?, ?, ?, ?, ?)");
-      $stmt->bind_param("ssddds", $_SESSION['user'], $_SESSION['image_path'], $_SESSION['radius'],
-      $_SESSION['circleX'], $_SESSION['circleY'], $_SESSION['caption']);
+      $stmt->bind_param(
+          "ssddds",
+          $_SESSION['user'],
+          $_SESSION['image_path'],
+          $_SESSION['radius'],
+      $_SESSION['circleX'],
+          $_SESSION['circleY'],
+          $hashed_password
+      );
+      echo $hashed_password;
       $stmt->execute();
       $stmt->close();
-
 ?>
 
 </body>

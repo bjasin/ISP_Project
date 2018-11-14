@@ -7,4 +7,4 @@ image_path VARCHAR(60),
 radius DOUBLE(20,6),
 circleX DOUBLE(20,6),
 circleY DOUBLE(20,6),
-caption VARCHAR(30) NOT NULL);
+caption VARCHAR(255) NOT NULL);

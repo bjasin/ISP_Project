@@ -3,9 +3,6 @@ session_start();
 ?>
 <!DOCTYPE html>
 <html lang="en">
-<!-- TODO:
-restrictions on username and passwords
--->
 <head>
     <title>ISP Project</title>
     <meta charset="UTF-8">
@@ -23,10 +20,22 @@ $_SESSION['radius'] = $_POST['radius'];
 ?>
 <h1>Set a Password</h1>
   <div id="page4">
-  	<form id="caption_form" action="create_account_successful.php" method="post">
-  		<input id="caption" type="password" name="caption" placeholder="Enter Password"><br>
+
+  	<form data-parsley-validate="" id="caption_form" action="create_account_successful.php" method="post">
+  		<input id="caption" data-parsley-minlength="6" data-parsley-maxlength="20"
+      data-parsley-uppercase="1"
+    data-parsley-lowercase="1"
+    data-parsley-number="1"
+    data-parsley-special="1"
+    data-parsley-trigger="change"
+      data-parsley-minlength-message="Your caption must be at least 6 characters!"
+       data-parsley-maxlength-message="Your caption must be at most 20 characters!"
+       data-parsley-type-message="Your can only use alphanumeric characters in your caption!"
+       type="password" name="caption" placeholder="" required>
   		<input id="text_submit" type="submit" name="submit" value="Submit">
   	</form>
+
   </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/parsley.js/2.8.1/parsley.js"></script>
 </body>
 </html>

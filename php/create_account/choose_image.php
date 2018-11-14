@@ -3,9 +3,6 @@ session_start();
 ?>
 <!DOCTYPE html>
 <html lang="en">
-<!-- TODO:
-restrictions on username and passwords
--->
 <head>
     <title>ISP Project</title>
     <meta charset="UTF-8">
@@ -25,7 +22,7 @@ restrictions on username and passwords
     <!--Choose picture to use-->
     <div id="page2">
         <form id="image_form"  method="post" action="pix_selection.php" enctype="multipart/form-data">
-            <input type="file" id="upload" name="upload" accept="image/png, image/jpeg" required/>
+            <input type="file" id="upload" name="upload" accept="image/png, image/jpeg" required>
 
         <input id="preview_pic" type="button" value="Preview">
         <input id="submit_pic" name="submit" type="submit" value="Submit">
