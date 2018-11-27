@@ -31,7 +31,7 @@ $_SESSION['radius'] = $_POST['radius'];
       data-parsley-minlength-message="Your caption must be at least 6 characters!"
        data-parsley-maxlength-message="Your caption must be at most 20 characters!"
        data-parsley-type-message="Your can only use alphanumeric characters in your caption!"
-       type="password" name="caption" placeholder="" required>
+       type="password" name="caption" required>
   		<input id="text_submit" type="submit" name="submit" value="Submit">
   	</form>
 

@@ -14,8 +14,8 @@ session_start();
 </head>
 <body>
 
-    <h1>Thank you for creating an account!</h1>
-    <p>You may log in <a href="../index.php">here</a>, if you'd like.</p>
+    <h1>Thank you for logging in!</h1>
+
     <?php
     $_SESSION['caption'] = $_POST['caption'];
     ?>
@@ -31,6 +31,7 @@ session_start();
       if ($conn->connect_error) {
           die("Connection failed: " . $conn->connect_error);
       }
+      /*
 $hashed_password = password_hash($_SESSION['caption'], PASSWORD_DEFAULT);
  $stmt = $conn->prepare("INSERT INTO USERS (username, image_path, radius, circleX, circleY, caption) VALUES (?, ?, ?, ?, ?, ?)");
       $stmt->bind_param(
@@ -44,7 +45,7 @@ $hashed_password = password_hash($_SESSION['caption'], PASSWORD_DEFAULT);
       );
 
       $stmt->execute();
-      $stmt->close();
+      $stmt->close();*/
 ?>
 
 </body>
