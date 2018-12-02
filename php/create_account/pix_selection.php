@@ -54,7 +54,7 @@ $imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
             <input id="circleX" type="text" name="circleX" required>
             <input id="circleY" type="text" name="circleY" required>
 </div>
-        <input id="display: none;"  name="submit_circle" type="submit" value="Submit Location">
+        <input id="submit_circle"  name="submit_circle" type="submit" value="Submit Location">
 </form>
         <button id="reset_circle">Reset Location</button>
     <button class="backbutton">Back</button>
